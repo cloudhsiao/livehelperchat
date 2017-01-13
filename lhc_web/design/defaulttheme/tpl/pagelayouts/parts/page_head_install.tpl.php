@@ -2,8 +2,8 @@
 <?php 
 $ReverseOrder = $Result['path'];
 krsort($ReverseOrder);
-foreach ($ReverseOrder as $pathItem) : ?><?php echo htmlspecialchars($pathItem['title']).' '?>&laquo;<?php echo ' ';endforeach;?>
-<?php endif; ?> - Live helper chat</title>
+foreach ($ReverseOrder as $pathItem) : ?><?php echo htmlspecialchars($pathItem['title']).' '?><?php echo ' ';endforeach;?>
+<?php endif; ?> - Live Support</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
 <link rel="icon" type="image/png" href="<?php echo erLhcoreClassDesign::design('images/favicon.ico')?>" />
