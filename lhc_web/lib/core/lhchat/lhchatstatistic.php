@@ -320,6 +320,7 @@ class erLhcoreClassChatStatistic {
     	
     	$sql = "SELECT count(id) AS number_of_chats,country_name FROM lh_chat WHERE {$appendFilterTime} {$generalFilter} GROUP BY country_code ORDER BY number_of_chats DESC LIMIT 20";
     	$db = ezcDbInstance::get();
+      $db->query("set @@sql_mode='STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';");
     	$stmt = $db->prepare($sql);
     	
     	if ($useTimeFilter == true) {
