@@ -191,7 +191,7 @@ class ezcImageAnalyzerPhpHandler extends ezcImageAnalyzerHandler
      */
     private function analyzeExif( $file, ezcImageAnalyzerData $dataStruct )
     {
-        $dataStruct->exif = exif_read_data( $file, "COMPUTED,FILE", true, false );
+        $dataStruct->exif = @exif_read_data( $file, "COMPUTED,FILE", true, false );
 
         // Section "COMPUTED"
         if ( isset( $dataStruct->exif['COMPUTED']['Width'] ) && isset( $dataStruct->exif['COMPUTED']['Height'] ) )
